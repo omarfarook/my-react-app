@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { BrowserRouter, Link } from 'react-router-dom';
 import logo from '../logo.svg';
 import classes from './App.css';
-import Aux from '../hoc/Aux';
+import Hoc from '../hoc/hoc';
 import withClass from '../hoc/withClass';
 import AppRouter from './AppRouter';
 import ChildCompTwo from '../components/lazy-comps/lazy-child-comp/Child-comp-two';
@@ -34,7 +34,7 @@ class App extends PureComponent {
     return (
       <BrowserRouter>
       
-      <Aux classes={classes.App}>
+      <Hoc classes={classes.App}>
         <header className={classes.App_header}>
           <img src={logo} className={[classes.App_logo,'App_logo_global', 'col-12'].join(' ')} alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
@@ -52,7 +52,7 @@ class App extends PureComponent {
           </ul>
         </nav>
       <AppRouter></AppRouter>
-      </Aux>
+      </Hoc>
       </BrowserRouter>
     );
   }
