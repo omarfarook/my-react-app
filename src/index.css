@@ -1,0 +1,10 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+:global(.App_logo_global){
+  background: transparent;
+}

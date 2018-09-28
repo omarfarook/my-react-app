@@ -1,0 +1,17 @@
+.personContainer {
+    display: flex;
+    flex-flow: column;
+    padding: 0;
+    justify-content: center
+}
+
+.person {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+}
+
+.person span {
+    padding: 5px;
+}
