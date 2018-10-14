@@ -1,14 +1,26 @@
+.overlay {
+  position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
+    z-index: 900;
+}
+
 .Loader,
 .Loader:before,
 .Loader:after {
   border-radius: 50%;
 }
 .Loader {
+  position: fixed;
+  left: 46%;
+  top: 50vh;
+  margin: auto;
   color: #521751;
   font-size: 11px;
   text-indent: -99999em;
   margin: 55px auto;
-  position: relative;
+  /* position: relative; */
   width: 10em;
   height: 10em;
   box-shadow: inset 0 0 0 1em;

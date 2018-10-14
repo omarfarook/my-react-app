@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Input from '../ui/input/Input';
 import formData from './FormData';
-import {ReactTitle} from 'react-meta-tags';
+import { compose } from 'redux';
+import commonUtilityService from '../../hoc/commonUtilityService';
 
 class Form extends Component {
 
@@ -44,7 +45,7 @@ class Form extends Component {
             formIsvalid = updatedForm[inputIdentifier].isValid && formIsvalid;
         }
         
-        this.setState({ contactForm: updatedForm, formIsvalid: formIsvalid });
+        this.setState({ contactForm: updatedForm, formValid: formIsvalid });
     }
 
     onSubmit(event) {
@@ -60,6 +61,8 @@ class Form extends Component {
     }
 
     render() {
+
+        const { titleAndMetaTags } = this.props;
 
         const formElementArray = [];
 
@@ -94,11 +97,11 @@ class Form extends Component {
 
         return (
             <div>
-            <ReactTitle title="FORM"/>
+                {titleAndMetaTags('Form', 'Welcome to Form')}
                 {form}
             </div>
         )
     }
 }
 
-export default Form;
+export default compose(commonUtilityService)(Form);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Persons from './persons';
+import commonUtilityService from '../../hoc/commonUtilityService';
 
 export const PropsContext = React.createContext(false);
 
@@ -17,9 +18,12 @@ class AppPerson extends Component {
         }
     }
 
-    componentDidMount() {
-        //  console.log(this.props);
-    }
+    // componentDidMount() {
+    //       console.log(this.props);
+    //       if(!this.props.isNullOrUndefined(this.state.persons)) {
+    //           console.log(this.state.persons)
+    //       }
+    // }
 
     togglePerson() {
 
@@ -47,6 +51,7 @@ class AppPerson extends Component {
         }
         return (
             <div>
+                {this.props.titleAndMetaTags('Person', 'Welcome to Person page')}
                 <button onClick={this.togglePerson.bind(this)}>Toggle</button>
                 <PropsContext.Provider value={this.props}>{person}</PropsContext.Provider>
                 {/* <button onClick={this.goBack.bind(this)}>Go Back</button> */}
@@ -55,4 +60,4 @@ class AppPerson extends Component {
     }
 }
 
-export default AppPerson;
+export default commonUtilityService(AppPerson);

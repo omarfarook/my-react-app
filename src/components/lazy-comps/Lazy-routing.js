@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Route} from 'react-router-dom'
+import { Route, BrowserRouter as Router} from 'react-router-dom'
 import Switch from 'react-router-dom/Switch';
 import ChildCompOne from './lazy-child-comp/Child-comp-one';
 import ChildCompTwo from './lazy-child-comp/Child-comp-two';
@@ -9,11 +9,13 @@ class LazyRouting extends Component {
 
     render() {
         return(
-        <Switch>
-          <Route path='/lazyComp/' exact component={ChildCompOne} />
-          <Route path='/lazyComp/childTwo' component={ChildCompTwo} />
-          <Route component={NotFound} />
-        </Switch>
+        <Router basename={'/lazyComp'}>
+            <Switch>
+                <Route path='/' exact component={ChildCompOne} />
+                <Route path='/childTwo' component={ChildCompTwo} />
+                <Route component={NotFound} />
+            </Switch>
+        </Router>
         )
     }
 }
